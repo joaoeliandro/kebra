@@ -56,7 +56,7 @@
 
 <h3 align="center">Aplicação web kebra</h3>
 <p align="center">
-    <img src="https://drive.google.com/uc?export=view&id=15krmtBk-AjxkCl4PiwAQFWk3TpOVPjO1" alt="kebra-demo" />
+    <img src="https://drive.google.com/uc?export=view&id=15Trzco3_z_oAXtjYYr9rUewPHbmrNLMi" alt="kebra-demo" />
 </p>
 
 ---

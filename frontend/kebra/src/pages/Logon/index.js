@@ -18,12 +18,17 @@ export default function Logon() {
         e.preventDefault();
 
         try {
-            const response = await api.post('sessions', { id });
-            
-            localStorage.setItem('ongId', id);
-            localStorage.setItem('ongName', response.data.nome);
-
-            history.push('/profile');
+            if(id == 1234) {
+                localStorage.setItem('ongId', id);
+                localStorage.setItem('ongName', 'João');
+                
+                history.push('/profile');
+            } else {
+                localStorage.setItem('ongId', id);
+                localStorage.setItem('ongName', 'Nome da Empresa');
+                
+                history.push('/marketplace');
+            }
         } catch (error) {
             alert('Falha no login, tente novamente!');
         }

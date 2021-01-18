@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2, FiLogIn } from 'react-icons/fi';
+import { FiPower, FiTrash2, FiLogIn, FiArrowLeft } from 'react-icons/fi';
 
 import api from '../../services/api'
 
@@ -8,7 +8,7 @@ import './style.css';
 
 import logoImg from '../../assets/ke_logo.svg';
 
-export default function Profile() {
+export default function Eventos() {
     const [incidents, setIncidents] = useState([]);
 
     const ongId = localStorage.getItem('ongId');
@@ -19,20 +19,26 @@ export default function Profile() {
     useEffect(() => {
         const data = [{
             id: 1,
-            titulo: "Primeiros passos de UX Design",
-            descricao: "Curso focado em desenvolvimento de design com metodologia UX",
-            skills: "Lean UX, Agile UX, Design Sprint, etc"
+            titulo: "Gabriella Santiago Linda demais",
+            descricao: "UX Design básico, UX Design avançado, Primeiro negócio com UX Design",
+            skills: "Moro na periferia de Porto Alegre, filha de mãe solteira e faxineira, nunca desistir dos estudos é o que mais me apego."
         },{
             id: 2,
-            titulo: "Javascript para leigos",
-            descricao: "Curso focado em ensino da Liguagem de programação Javascript",
-            skills: "Lógica de Programação, Pensamento rápido, capacidade de trabalho em equipe, etc"
+            titulo: "Gabriella Santiago Linda demais",
+            descricao: "UX Design básico, UX Design avançado, Primeiro negócio com UX Design",
+            skills: "Moro na periferia de Porto Alegre, filha de mãe solteira e faxineira, nunca desistir dos estudos é o que mais me apego."
         },
         {
             id: 3,
-            titulo: "Vendas e Marketing Digital",
-            descricao: "Curso focado em ensino do marketing digital e processos de vendas do zero",
-            skills: "SEO, Capacidade de venda B2B e B2C, Aprimoramento da oratória, etc"
+            titulo: "Gabriella Santiago Linda demais",
+            descricao: "UX Design básico, UX Design avançado, Primeiro negócio com UX Design",
+            skills: "Moro na periferia de Porto Alegre, filha de mãe solteira e faxineira, nunca desistir dos estudos é o que mais me apego."
+        },
+        {
+            id: 3,
+            titulo: "Gabriella Santiago Linda demais",
+            descricao: "UX Design básico, UX Design avançado, Primeiro negócio com UX Design",
+            skills: "Moro na periferia de Porto Alegre, filha de mãe solteira e faxineira, nunca desistir dos estudos é o que mais me apego."
         }];
 
         setIncidents(data);
@@ -55,7 +61,7 @@ export default function Profile() {
     function handleLogout() {
         localStorage.clear();
 
-        history.push('/');
+        history.push('/profile');
     }
 
     return (
@@ -64,24 +70,26 @@ export default function Profile() {
                 <img src={logoImg} alt="Be The Hero" />
                 <span>Bem vindo&#40;a&#41;, {ongName}</span>
 
-                <Link className="button" to="/eventos">Eventos</Link>
+                <Link className="button" to="/profile">
+                    <FiArrowLeft size={20} color="#fff"></FiArrowLeft>
+                </Link>
                 <button onClick={handleLogout} type="button">
-                    <FiPower size={18} color="#fff" />
+                    <FiArrowLeft size={18} color="#fff" />
                 </button>
             </header>
 
-            <h1>Cursos</h1>
+            <h1>Perfis</h1>
 
             <ul>
                 {incidents.map(incident => (
                     <li key={incident.id}>
-                        <strong>Curso:</strong>
+                        <strong>Nome:</strong>
                         <p>{incident.titulo}</p>
 
-                        <strong>Descrição:</strong>
+                        <strong>Cursos:</strong>
                         <p>{incident.descricao}</p>
 
-                        <strong>Diferenciais:</strong>
+                        <strong>Sobre:</strong>
                         <p>{incident.skills}
                         </p>
 

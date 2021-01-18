@@ -11,7 +11,7 @@ import logoImg from '../../assets/logo.svg';
 export default function NewIncident() {
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
-    const [valor, setValor] = useState('');
+    const [proposta, setProposta] = useState('');
 
     const ongId = localStorage.getItem('ongId');
 
@@ -23,17 +23,13 @@ export default function NewIncident() {
         const data = {
             titulo,
             descricao,
-            valor
+            proposta
         };
 
         try {
-            await api.post('incidents', data, {
-                headers: {
-                    Authorization: ongId,
-                }
-            });
+            
 
-            history.push('/profile');
+            history.push('/marketplace');
         } catch (error) {
             alert('Erro ao cadastrar caso, tente novamente!');
         }
@@ -44,10 +40,10 @@ export default function NewIncident() {
             <div className="content">
                 <section>
                     <img src={logoImg} alt="Be The Hero" />
-                    <h1>Cadastrar novo caso</h1>
-                    <p>Descreva o caso detalhadamente para encontrar um herói para resolve-lô.</p>
+                    <h1>Cadastrar nova vaga</h1>
+                    <p>Descreva a vaga detalhadamente para encontrar o futuro da empresa.</p>
 
-                    <Link className="back-link" to="/profile">
+                    <Link className="back-link" to="/marketplace">
                         <FiArrowLeft size={16} color="#7b3a8e" />
                         Voltar para home
                     </Link>
@@ -55,7 +51,7 @@ export default function NewIncident() {
 
                 <form onSubmit={handleNewIncident}>
                     <input
-                        placeholder="Título do caso"
+                        placeholder="Título da vaga"
                         value={titulo}
                         onChange={e => setTitulo(e.target.value)}
                         required
@@ -67,9 +63,9 @@ export default function NewIncident() {
                         required
                     />
                     <input
-                        placeholder="Valor em reais"
-                        value={valor}
-                        onChange={e => setValor(e.target.value)}
+                        placeholder="Proposta"
+                        value={proposta}
+                        onChange={e => setProposta(e.target.value)}
                         required
                     />
 

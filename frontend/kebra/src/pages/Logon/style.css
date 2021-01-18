@@ -1,0 +1,62 @@
+body {
+    background-image: url('../../assets/city.png');
+    align-items: center;
+    justify-content: center;
+}
+
+.logon-container {
+    width: 50%;
+    max-width: 1120px;
+    height: 80vh;
+    margin: 10% auto auto auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f5;
+    border-radius: 20px;
+}
+
+.logon-container section.form {
+    width: 100%;
+    max-width: 350px;
+    margin: 30px;
+}
+
+.logon-container section.form form {
+    margin-top: 100px;
+}
+
+.logon-container section.form span.slogan {
+    font-size: 18px;
+    text-align: center;
+}
+
+.logon-container section.form form h1{
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+.logon-container section.form form a {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    color: #41414d;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.logon-container section.form form a {
+    justify-content: space-between;
+}
+
+.logon-container section.form form a:hover {
+    opacity: 0.6;
+}
+
+/* h1 {
+  color: #7159c1;
+  color: #715;
+} */
